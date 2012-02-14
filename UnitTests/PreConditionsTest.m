@@ -31,4 +31,15 @@
     
 }
 
+-(void) testCheckNil_valueIsNil_customMessage {
+    @try {
+        [PreConditions checkNotNil:nil withMessage:@"message"];
+        GHFail(@"Should have raised an exception");
+    }
+    @catch (NSException *exception) {
+        GHAssertEqualStrings(@"message", [exception reason], @"Message should have been customized");
+        GHAssertEqualStrings(NSInvalidArgumentException, [exception name], @"Name should indicate that it's an illegal argument");
+    }
+}
+
 @end
