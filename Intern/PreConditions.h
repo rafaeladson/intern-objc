@@ -12,8 +12,6 @@
 
 +(void) checkNotNil:(id)argument;
 +(void) checkNotNil:(id)argument withMessage:(NSString *)message;
-+(void) checkDoesNotContainNil:(NSArray *)array;
-+(void) checkDoesNotContainNil:(NSArray *)array withMessage:(NSString *)message;
 
 
 @end

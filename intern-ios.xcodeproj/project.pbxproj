@@ -25,6 +25,10 @@
 		537D1CB014E9D04A00FAB625 /* PreConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CAD14E9D04A00FAB625 /* PreConditions.m */; };
 		537D1CB214E9D06200FAB625 /* PreConditionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CB114E9D06200FAB625 /* PreConditionsTest.m */; };
 		537D1CB414E9D1AE00FAB625 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1C5814E9CEE400FAB625 /* Foundation.framework */; };
+		537D1CB914EB0F0100FAB625 /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 537D1CB714EB0F0100FAB625 /* Stack.h */; };
+		537D1CBA14EB0F0100FAB625 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CB814EB0F0100FAB625 /* Stack.m */; };
+		537D1CBB14EB0F0100FAB625 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CB814EB0F0100FAB625 /* Stack.m */; };
+		537D1CBE14EB0FC700FAB625 /* StackTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CBD14EB0FC700FAB625 /* StackTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,9 @@
 		537D1CAC14E9D04A00FAB625 /* PreConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreConditions.h; sourceTree = "<group>"; };
 		537D1CAD14E9D04A00FAB625 /* PreConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreConditions.m; sourceTree = "<group>"; };
 		537D1CB114E9D06200FAB625 /* PreConditionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreConditionsTest.m; sourceTree = "<group>"; };
+		537D1CB714EB0F0100FAB625 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		537D1CB814EB0F0100FAB625 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		537D1CBD14EB0FC700FAB625 /* StackTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +163,8 @@
 		537D1C7914E9CEF600FAB625 /* Intern */ = {
 			isa = PBXGroup;
 			children = (
-				537D1CAB14E9D03300FAB625 /* Basic */,
+				537D1CB614EB0E7200FAB625 /* ds */,
+				537D1CAB14E9D03300FAB625 /* basic */,
 				537D1C7A14E9CEF600FAB625 /* Supporting Files */,
 			);
 			path = Intern;
@@ -175,7 +183,8 @@
 		537D1C8F14E9CF1400FAB625 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				537D1CAA14E9D01800FAB625 /* Basic  */,
+				537D1CBC14EB0F1800FAB625 /* ds */,
+				537D1CAA14E9D01800FAB625 /* basic */,
 				537D1C9014E9CF1400FAB625 /* Supporting Files */,
 			);
 			path = UnitTests;
@@ -192,21 +201,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		537D1CAA14E9D01800FAB625 /* Basic  */ = {
+		537D1CAA14E9D01800FAB625 /* basic */ = {
 			isa = PBXGroup;
 			children = (
 				537D1CB114E9D06200FAB625 /* PreConditionsTest.m */,
 			);
-			name = "Basic ";
+			name = basic;
 			sourceTree = "<group>";
 		};
-		537D1CAB14E9D03300FAB625 /* Basic */ = {
+		537D1CAB14E9D03300FAB625 /* basic */ = {
 			isa = PBXGroup;
 			children = (
 				537D1CAC14E9D04A00FAB625 /* PreConditions.h */,
 				537D1CAD14E9D04A00FAB625 /* PreConditions.m */,
 			);
-			name = Basic;
+			name = basic;
+			sourceTree = "<group>";
+		};
+		537D1CB614EB0E7200FAB625 /* ds */ = {
+			isa = PBXGroup;
+			children = (
+				537D1CB714EB0F0100FAB625 /* Stack.h */,
+				537D1CB814EB0F0100FAB625 /* Stack.m */,
+			);
+			name = ds;
+			sourceTree = "<group>";
+		};
+		537D1CBC14EB0F1800FAB625 /* ds */ = {
+			isa = PBXGroup;
+			children = (
+				537D1CBD14EB0FC700FAB625 /* StackTest.m */,
+			);
+			name = ds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				537D1CAE14E9D04A00FAB625 /* PreConditions.h in Headers */,
+				537D1CB914EB0F0100FAB625 /* Stack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				537D1CAF14E9D04A00FAB625 /* PreConditions.m in Sources */,
+				537D1CBA14EB0F0100FAB625 /* Stack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +399,8 @@
 				537D1C9614E9CF1400FAB625 /* main.m in Sources */,
 				537D1CB014E9D04A00FAB625 /* PreConditions.m in Sources */,
 				537D1CB214E9D06200FAB625 /* PreConditionsTest.m in Sources */,
+				537D1CBB14EB0F0100FAB625 /* Stack.m in Sources */,
+				537D1CBE14EB0FC700FAB625 /* StackTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
