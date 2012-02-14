@@ -20,17 +20,5 @@
     }
 }
 
-+(void) checkDoesNotContainNil:(NSArray *)array {
-    [PreConditions checkDoesNotContainNil:array withMessage:@"Array should not contain nil"];
-}
-
-+(void) checkDoesNotContainNil:(NSArray *)array withMessage:(NSString *)message {
-    [PreConditions checkNotNil:array];
-    for ( int i = 0; i < [array count]; i++ ) {
-        if ( [array objectAtIndex:i] == nil ) {
-            @throw [NSException exceptionWithName:NSInvalidArgumentException reason:message userInfo:nil];
-        }
-    }
-}
 
 @end
