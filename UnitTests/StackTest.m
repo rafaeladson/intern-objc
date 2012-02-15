@@ -42,5 +42,16 @@
     
 }
 
+-(void) testPushNil {
+    Stack *stack = [[Stack alloc] init];
+    @try {
+        [stack push:nil];
+        GHFail(@"Exception should be raised");
+    } @catch (NSException *exception) {
+        GHAssertEqualStrings(NSInvalidArgumentException, [exception name], @"Exception should indicate invalid argument");
+        GHAssertEqualStrings(@"Error: Cannot push nil into stack", [exception reason], @"Exception should have clear message");
+    }
+}
+
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "Stack.h"
-
+#import "PreConditions.h"
 
 @implementation Stack
 
@@ -36,6 +36,7 @@
 }
 
 -(void) push:(id)element {
+    [PreConditions checkNotNil:element withMessage:@"Error: Cannot push nil into stack"];
     [self._wrapped addObject:element];
     
 }
