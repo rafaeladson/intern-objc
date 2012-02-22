@@ -12,6 +12,7 @@
 
 +(void) checkNotNil:(id)argument;
 +(void) checkNotNil:(id)argument withMessage:(NSString *)message;
-
++(void) checkArgument:(bool)argument;
++(void) checkArgument:(bool)argument withMessage:(NSString *) message;
 
 @end

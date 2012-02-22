@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5328121314F5213100E6BB8A /* RandomIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5328121114F5213100E6BB8A /* RandomIterator.h */; };
+		5328121414F5213100E6BB8A /* RandomIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5328121214F5213100E6BB8A /* RandomIterator.m */; };
+		5328121514F5213100E6BB8A /* RandomIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5328121214F5213100E6BB8A /* RandomIterator.m */; };
 		537D1C5714E9CEE400FAB625 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1C5614E9CEE400FAB625 /* UIKit.framework */; };
 		537D1C5914E9CEE400FAB625 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1C5814E9CEE400FAB625 /* Foundation.framework */; };
 		537D1C5B14E9CEE400FAB625 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1C5A14E9CEE400FAB625 /* CoreGraphics.framework */; };
@@ -29,9 +32,12 @@
 		537D1CBA14EB0F0100FAB625 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CB814EB0F0100FAB625 /* Stack.m */; };
 		537D1CBB14EB0F0100FAB625 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CB814EB0F0100FAB625 /* Stack.m */; };
 		537D1CBE14EB0FC700FAB625 /* StackTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CBD14EB0FC700FAB625 /* StackTest.m */; };
+		53EDA9E914F5395800C01AEE /* RandomIteratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EDA9E814F5395800C01AEE /* RandomIteratorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5328121114F5213100E6BB8A /* RandomIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomIterator.h; sourceTree = "<group>"; };
+		5328121214F5213100E6BB8A /* RandomIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomIterator.m; sourceTree = "<group>"; };
 		537D1C5214E9CEE400FAB625 /* intern-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "intern-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		537D1C5614E9CEE400FAB625 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		537D1C5814E9CEE400FAB625 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,6 +67,7 @@
 		537D1CB714EB0F0100FAB625 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		537D1CB814EB0F0100FAB625 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		537D1CBD14EB0FC700FAB625 /* StackTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackTest.m; sourceTree = "<group>"; };
+		53EDA9E814F5395800C01AEE /* RandomIteratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomIteratorTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +230,8 @@
 			children = (
 				537D1CB714EB0F0100FAB625 /* Stack.h */,
 				537D1CB814EB0F0100FAB625 /* Stack.m */,
+				5328121114F5213100E6BB8A /* RandomIterator.h */,
+				5328121214F5213100E6BB8A /* RandomIterator.m */,
 			);
 			name = ds;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				537D1CBD14EB0FC700FAB625 /* StackTest.m */,
+				53EDA9E814F5395800C01AEE /* RandomIteratorTest.m */,
 			);
 			name = ds;
 			sourceTree = "<group>";
@@ -244,6 +254,7 @@
 			files = (
 				537D1CAE14E9D04A00FAB625 /* PreConditions.h in Headers */,
 				537D1CB914EB0F0100FAB625 /* Stack.h in Headers */,
+				5328121314F5213100E6BB8A /* RandomIterator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +400,7 @@
 			files = (
 				537D1CAF14E9D04A00FAB625 /* PreConditions.m in Sources */,
 				537D1CBA14EB0F0100FAB625 /* Stack.m in Sources */,
+				5328121414F5213100E6BB8A /* RandomIterator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +413,8 @@
 				537D1CB214E9D06200FAB625 /* PreConditionsTest.m in Sources */,
 				537D1CBB14EB0F0100FAB625 /* Stack.m in Sources */,
 				537D1CBE14EB0FC700FAB625 /* StackTest.m in Sources */,
+				5328121514F5213100E6BB8A /* RandomIterator.m in Sources */,
+				53EDA9E914F5395800C01AEE /* RandomIteratorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +624,7 @@
 				537D1C6C14E9CEE400FAB625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		537D1C8314E9CEF600FAB625 /* Build configuration list for PBXNativeTarget "Intern" */ = {
 			isa = XCConfigurationList;
@@ -618,6 +633,7 @@
 				537D1C8514E9CEF600FAB625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		537D1CA414E9CF1400FAB625 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
@@ -626,6 +642,7 @@
 				537D1CA614E9CF1400FAB625 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

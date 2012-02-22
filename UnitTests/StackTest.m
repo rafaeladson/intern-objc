@@ -21,9 +21,12 @@
 
 -(void) testPop {
     Stack *stack = [[Stack alloc] initWithArray:[NSArray arrayWithObjects:@"foo", @"bar", nil]];
+    GHAssertFalse([stack isEmpty], @"Stack should have elements once initialized");
     NSString *firstElement = [stack pop];
+    GHAssertFalse([stack isEmpty], @"Stack should still have one element");
     GHAssertEqualStrings(@"bar", firstElement, @"Could pop one element from stack");
     NSString *secondElement = [stack pop];
+    GHAssertTrue([stack isEmpty], @"Stack should have no more Elements");
     GHAssertEqualStrings(@"foo", secondElement, @"Cold also pop last element");
     NSString *elementThatShouldBeNil = [stack pop];
     GHAssertNil(elementThatShouldBeNil, @"When stack has no more elements, it should return nil");
@@ -32,13 +35,15 @@
 
 -(void) testPush {
     Stack *stack = [[Stack alloc] init];
+    GHAssertTrue([stack isEmpty], @"Stack should be empty upon initialization");
     NSString *elementThatShouldBeNil = [stack pop];
     GHAssertNil(elementThatShouldBeNil, @"When stack is created empty, pop should return nil");
     [stack push:@"foo"];
     [stack push:@"bar"];
+    GHAssertFalse([stack isEmpty], @"Stack shouldn't be empty anymore");
     GHAssertEqualStrings(@"bar", [stack pop], @"Element should pop last in");
     GHAssertEqualStrings(@"foo", [stack pop], @"Last element in stack should be popped");
-    GHAssertNil([stack pop], @"Stack is empty again");
+    GHAssertTrue([stack isEmpty], @"Stack is empty again");
     
 }
 

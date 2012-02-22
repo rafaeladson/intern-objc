@@ -20,5 +20,16 @@
     }
 }
 
++(void) checkArgument:(bool)argument {
+    [PreConditions checkArgument:argument withMessage:@"Argument is invalid"];
+}
+
++(void) checkArgument:(bool)argument withMessage:(NSString *)message {
+    if (!argument) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:message userInfo:nil];
+    }
+    
+}
+
 
 @end

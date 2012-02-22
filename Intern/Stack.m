@@ -41,4 +41,7 @@
     
 }
 
+-(bool) isEmpty {
+    return [_wrapped count] == 0;
+}
 @end

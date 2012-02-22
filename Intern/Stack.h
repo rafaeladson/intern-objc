@@ -18,5 +18,6 @@
 -(Stack *) initWithArray:(NSArray *)array;
 -(id) pop;
 -(void) push:(id)element;
+-(bool) isEmpty;
 
 @end
