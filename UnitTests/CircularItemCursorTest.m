@@ -20,22 +20,22 @@
 -(void) testUseWithOneElement {
     NSArray *arrayWithOneElement = [[NSArray alloc] initWithObjects:@"foo", nil];
     CircularItemCursor *cursor = [[CircularItemCursor alloc] initWithArray:arrayWithOneElement];
-    GHAssertEqualStrings(@"foo", [cursor getCurrent], @"First get current");
+    GHAssertEqualStrings(@"foo", cursor.currentItem, @"First get current");
     [cursor goToNext];
-    GHAssertEqualStrings(@"foo", [cursor getCurrent], @"Second get current");
+    GHAssertEqualStrings(@"foo", cursor.currentItem, @"Second get current");
 }
 
 -(void) testUseWithTwoElements {
     NSArray *arrayWithTwoElements = [[NSArray alloc] initWithObjects:@"foo", @"bar", nil];
     CircularItemCursor *cursor = [[CircularItemCursor alloc] initWithArray:arrayWithTwoElements];
-    NSString *firstElement = [cursor getCurrent];
-    NSString *stillFirstElement = [cursor getCurrent];
+    NSString *firstElement = cursor.currentItem;
+    NSString *stillFirstElement = cursor.currentItem;
     GHAssertEqualStrings(firstElement, stillFirstElement, @"should not have advanced since fetching first value");
     [cursor goToNext];
-    NSString *secondElement = [cursor getCurrent];
+    NSString *secondElement = cursor.currentItem;
     GHAssertNotEqualStrings(firstElement, secondElement, @"first element should be different than second element");
     [cursor goToNext];
-    NSString *elementAfterRestart = [cursor getCurrent];
+    NSString *elementAfterRestart = cursor.currentItem;
     GHAssertTrue([elementAfterRestart isEqualToString:firstElement] || [elementAfterRestart isEqualToString:secondElement], 
                  @"%@ should be equal to %@ or to %@", elementAfterRestart, firstElement, secondElement );
     

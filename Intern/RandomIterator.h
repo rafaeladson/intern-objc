@@ -9,16 +9,12 @@
 #import <Foundation/Foundation.h>
 @class Stack;
 
-@interface RandomIterator : NSObject {
-    Stack *_itemsInRandomOrder;
-}
+@interface RandomIterator : NSObject 
 
 -(RandomIterator *) initWithItems:(NSArray *)items;
 -(bool) hasNext;
 -(id) next;
 
-@property(strong, atomic) Stack *_itemsInRandomOrder;
--(void) _sortByRandom:(NSMutableArray *)array;
 
 @end
 

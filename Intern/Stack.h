@@ -8,16 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Stack : NSObject {
-    NSMutableArray *_wrapped;
-}
+@interface Stack : NSObject
 
-@property(strong, atomic) NSMutableArray *_wrapped;
 
 -(Stack *) init;
 -(Stack *) initWithArray:(NSArray *)array;
 -(id) pop;
 -(void) push:(id)element;
 -(bool) isEmpty;
+
 
 @end

@@ -10,18 +10,13 @@
 @class RandomIterator;
 
 @interface CircularItemCursor : NSObject {
-    NSArray *_items;
-    RandomIterator *_iterator;
-    id _currentItem;
 }
 
 -(CircularItemCursor *) initWithArray:(NSArray *)array;
 -(void) goToNext;
--(id) getCurrent; 
 
 
-@property (strong, nonatomic) NSArray *_items;
-@property (strong, nonatomic) RandomIterator *_iterator;
-@property (strong, nonatomic) id _currentItem;
+@property (strong, nonatomic, readonly) id currentItem;
+
 
 @end

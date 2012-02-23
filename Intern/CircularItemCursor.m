@@ -10,30 +10,38 @@
 #import "RandomIterator.h"
 #import "PreConditions.h"
 
+@interface CircularItemCursor ()
+
+@property (strong, nonatomic) NSArray *items;
+@property (strong, nonatomic) RandomIterator *iterator;
+@property (strong, nonatomic, readwrite) id currentItem;
+
+@end
+
 @implementation CircularItemCursor
 
-@synthesize _items, _iterator, _currentItem;
+@synthesize items = _items, iterator = _iterator, currentItem = _currentItem;
 
 -(CircularItemCursor *) initWithArray:(NSArray *)array {
     if ( self != nil ) {
         [PreConditions checkNotNil:array];
         [PreConditions checkArgument:([array count] > 0) withMessage:@"Error: Cannot instantiate circularitemcursor with 0 items. Not supported."];
-        self._items = [[NSArray alloc] initWithArray:array];
-        self._iterator = [[RandomIterator alloc] initWithItems:array];
-        self._currentItem = [self._iterator next];
+        _items = [[NSArray alloc] initWithArray:array];
+        _iterator = [[RandomIterator alloc] initWithItems:array];
+        _currentItem = [self.iterator next];
     }
     return self;
 }
 
 -(void) goToNext {
-    if ( ![self._iterator hasNext] ) {
-        self._iterator = [[RandomIterator alloc] initWithItems:self._items];
+    if ( ![self.iterator hasNext] ) {
+        self.iterator = [[RandomIterator alloc] initWithItems:self.items];
     }
-    self._currentItem = [self._iterator next];
+    self.currentItem = [self.iterator next];
 }
 
 -(id) getCurrent {
-    return self._currentItem;
+    return self.currentItem;
 }
 
 @end

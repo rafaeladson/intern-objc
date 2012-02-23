@@ -10,34 +10,41 @@
 #import "Stack.h"
 #import "PreConditions.h"
 
+@interface RandomIterator()
+
+@property(strong, atomic) Stack *itemsInRandomOrder;
+-(void) sortByRandom:(NSMutableArray *)array;
+
+@end
+
 @implementation RandomIterator 
 
-@synthesize _itemsInRandomOrder;
+@synthesize itemsInRandomOrder = _itemsInRandomOrder;
 
 -(id) initWithItems:(NSArray *)items {
     if ( self != nil ) {
         [PreConditions checkNotNil:items];
         NSMutableArray *mutableItems = [[NSMutableArray alloc] initWithArray:items];
-        [self _sortByRandom:mutableItems];
-        self._itemsInRandomOrder = [[Stack alloc] initWithArray:mutableItems];
+        [self sortByRandom:mutableItems];
+        _itemsInRandomOrder = [[Stack alloc] initWithArray:mutableItems];
       }
     return self;
 }
 
 -(bool) hasNext {
-    return ![self._itemsInRandomOrder isEmpty];
+    return ![self.itemsInRandomOrder isEmpty];
 }
 
 -(id) next {
-    if (![self._itemsInRandomOrder isEmpty]) {
-        return [self._itemsInRandomOrder pop];
+    if (![self.itemsInRandomOrder isEmpty]) {
+        return [self.itemsInRandomOrder pop];
     } else {
         @throw [NSException exceptionWithName:NSRangeException reason:@"Error: cannot retrieve item from empty iterator. Did you forget to call hasNext?" 
                                      userInfo:nil];
     }
 }
 
--(void) _sortByRandom:(NSMutableArray *)array {
+-(void) sortByRandom:(NSMutableArray *)array {
     for(int i = 0; i < [array count]; i++) {
         int indexOfExchange = (arc4random() % ([array count] - i ) ) + i;
         [array exchangeObjectAtIndex:i withObjectAtIndex:indexOfExchange];
@@ -46,8 +53,5 @@
 }
 
 
-
-
-    
 
 @end
