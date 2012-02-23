@@ -11,7 +11,7 @@
 @implementation PreConditions
 
 +(void) checkNotNil:(id)argument {
-    [PreConditions checkNotNil:argument withMessage:@"Argument should not be nil"];
+    [PreConditions checkNotNil:argument withMessage:@"Argument must not be nil"];
 }
 
 +(void) checkNotNil:(id)argument withMessage:(NSString *)message {

@@ -16,6 +16,7 @@
 
 -(id) initWithItems:(NSArray *)items {
     if ( self != nil ) {
+        [PreConditions checkNotNil:items];
         NSMutableArray *mutableItems = [[NSMutableArray alloc] initWithArray:items];
         [self _sortByRandom:mutableItems];
         self._itemsInRandomOrder = [[Stack alloc] initWithArray:mutableItems];

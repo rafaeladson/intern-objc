@@ -26,7 +26,7 @@
         [PreConditions checkNotNil:nil];
         GHFail(@"Should have caused an exception");
     } @catch (NSException *e) {
-        GHAssertEqualStrings(@"Argument should not be nil", [e reason], @"Checking not null default exception reason");
+        GHAssertEqualStrings(@"Argument must not be nil", [e reason], @"Checking not null default exception reason");
     }
     
 }

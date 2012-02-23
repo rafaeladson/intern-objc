@@ -13,7 +13,7 @@
     Stack *_itemsInRandomOrder;
 }
 
--(id) initWithItems:(NSArray *)items;
+-(RandomIterator *) initWithItems:(NSArray *)items;
 -(bool) hasNext;
 -(id) next;
 

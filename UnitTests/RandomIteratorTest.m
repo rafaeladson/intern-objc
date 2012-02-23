@@ -50,5 +50,16 @@
     GHAssertFalse([iterator hasNext], @"iterator should have no more elements");
 }
 
+-(void) testInitWithNull {
+    @try {
+        RandomIterator *iterator = [[RandomIterator alloc] initWithItems:nil];
+        GHFail(@"Should not allow instantiation of %@ with nil", iterator);
+    }
+    @catch (NSException *exception) {
+        GHAssertEqualStrings(@"Argument must not be nil", [exception reason], @"Expected message");
+    }
+}
+
+
 
 @end
