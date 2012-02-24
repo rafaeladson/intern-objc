@@ -10,6 +10,12 @@
 		5328121314F5213100E6BB8A /* RandomIterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5328121114F5213100E6BB8A /* RandomIterator.h */; };
 		5328121414F5213100E6BB8A /* RandomIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5328121214F5213100E6BB8A /* RandomIterator.m */; };
 		5328121514F5213100E6BB8A /* RandomIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5328121214F5213100E6BB8A /* RandomIterator.m */; };
+		53543B8D14F71F5800326078 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1C5814E9CEE400FAB625 /* Foundation.framework */; };
+		53543B9314F71F5800326078 /* InternIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 53543B9214F71F5800326078 /* InternIOS.m */; };
+		53543B9814F71F6900326078 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CB814EB0F0100FAB625 /* Stack.m */; };
+		53543B9914F71F6E00326078 /* RandomIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5328121214F5213100E6BB8A /* RandomIterator.m */; };
+		53543B9A14F71F7200326078 /* CircularItemCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EDA9EC14F5B24500C01AEE /* CircularItemCursor.m */; };
+		53543B9B14F71F7600326078 /* PreConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CAD14E9D04A00FAB625 /* PreConditions.m */; };
 		537D1C5714E9CEE400FAB625 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1C5614E9CEE400FAB625 /* UIKit.framework */; };
 		537D1C5914E9CEE400FAB625 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1C5814E9CEE400FAB625 /* Foundation.framework */; };
 		537D1C5B14E9CEE400FAB625 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1C5A14E9CEE400FAB625 /* CoreGraphics.framework */; };
@@ -42,6 +48,10 @@
 /* Begin PBXFileReference section */
 		5328121114F5213100E6BB8A /* RandomIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomIterator.h; sourceTree = "<group>"; };
 		5328121214F5213100E6BB8A /* RandomIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomIterator.m; sourceTree = "<group>"; };
+		53543B8C14F71F5800326078 /* libInternIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInternIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		53543B9014F71F5800326078 /* InternIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InternIOS-Prefix.pch"; sourceTree = "<group>"; };
+		53543B9114F71F5800326078 /* InternIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InternIOS.h; sourceTree = "<group>"; };
+		53543B9214F71F5800326078 /* InternIOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InternIOS.m; sourceTree = "<group>"; };
 		537D1C5214E9CEE400FAB625 /* intern-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "intern-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		537D1C5614E9CEE400FAB625 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		537D1C5814E9CEE400FAB625 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +88,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		53543B8914F71F5800326078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53543B8D14F71F5800326078 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		537D1C4F14E9CEE400FAB625 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,12 +128,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53543B8E14F71F5800326078 /* InternIOS */ = {
+			isa = PBXGroup;
+			children = (
+				53543B9114F71F5800326078 /* InternIOS.h */,
+				53543B9214F71F5800326078 /* InternIOS.m */,
+				53543B8F14F71F5800326078 /* Supporting Files */,
+			);
+			path = InternIOS;
+			sourceTree = "<group>";
+		};
+		53543B8F14F71F5800326078 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53543B9014F71F5800326078 /* InternIOS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		537D1C4714E9CEE400FAB625 = {
 			isa = PBXGroup;
 			children = (
 				537D1C7914E9CEF600FAB625 /* Intern */,
 				537D1C5C14E9CEE400FAB625 /* intern-ios */,
 				537D1C8F14E9CF1400FAB625 /* UnitTests */,
+				53543B8E14F71F5800326078 /* InternIOS */,
 				537D1C5514E9CEE400FAB625 /* Frameworks */,
 				537D1C5314E9CEE400FAB625 /* Products */,
 			);
@@ -127,6 +164,7 @@
 				537D1C5214E9CEE400FAB625 /* intern-ios.app */,
 				537D1C7214E9CEF600FAB625 /* Intern.framework */,
 				537D1C8A14E9CF1400FAB625 /* UnitTests.app */,
+				53543B8C14F71F5800326078 /* libInternIOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,6 +296,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		53543B8A14F71F5800326078 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		537D1C6F14E9CEF600FAB625 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +317,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		53543B8B14F71F5800326078 /* InternIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53543B9614F71F5800326078 /* Build configuration list for PBXNativeTarget "InternIOS" */;
+			buildPhases = (
+				53543B8814F71F5800326078 /* Sources */,
+				53543B8914F71F5800326078 /* Frameworks */,
+				53543B8A14F71F5800326078 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InternIOS;
+			productName = InternIOS;
+			productReference = 53543B8C14F71F5800326078 /* libInternIOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		537D1C5114E9CEE400FAB625 /* intern-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 537D1C6A14E9CEE400FAB625 /* Build configuration list for PBXNativeTarget "intern-ios" */;
@@ -348,6 +410,7 @@
 				537D1C5114E9CEE400FAB625 /* intern-ios */,
 				537D1C7114E9CEF600FAB625 /* Intern */,
 				537D1C8914E9CF1400FAB625 /* UnitTests */,
+				53543B8B14F71F5800326078 /* InternIOS */,
 			);
 		};
 /* End PBXProject section */
@@ -396,6 +459,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		53543B8814F71F5800326078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53543B9314F71F5800326078 /* InternIOS.m in Sources */,
+				53543B9814F71F6900326078 /* Stack.m in Sources */,
+				53543B9914F71F6E00326078 /* RandomIterator.m in Sources */,
+				53543B9A14F71F7200326078 /* CircularItemCursor.m in Sources */,
+				53543B9B14F71F7600326078 /* PreConditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		537D1C4E14E9CEE400FAB625 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +537,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		53543B9414F71F5800326078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/InternIOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InternIOS/InternIOS-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		53543B9514F71F5800326078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/InternIOS.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InternIOS/InternIOS-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		537D1C6814E9CEE400FAB625 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -622,6 +721,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		53543B9614F71F5800326078 /* Build configuration list for PBXNativeTarget "InternIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53543B9414F71F5800326078 /* Debug */,
+				53543B9514F71F5800326078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		537D1C4C14E9CEE400FAB625 /* Build configuration list for PBXProject "intern-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

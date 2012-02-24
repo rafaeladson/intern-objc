@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>InternIOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>UnitTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,6 +27,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>53543B8B14F71F5800326078</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>537D1C5114E9CEE400FAB625</key>
 		<dict>
 			<key>primary</key>
