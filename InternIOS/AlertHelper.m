@@ -7,6 +7,8 @@
 //
 
 #import "AlertHelper.h"
+#import <UIKit/UIKit.h>
+
 
 @implementation AlertHelper
 

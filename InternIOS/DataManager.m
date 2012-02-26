@@ -8,6 +8,8 @@
 
 #import "DataManager.h"
 #import "AlertHelper.h"
+#import <UIKit/UIKit.h>
+
 
 NSString * const DOCUMENT_READY = @"DOCUMENT_READY";
 
