@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>InternIOSTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>UnitTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>537D1C8914E9CF1400FAB625</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53B1E26B14FB0C98001C6160</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'InternIOSTest' target in the 'InternIOSTest' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
