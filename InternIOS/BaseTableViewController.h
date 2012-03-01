@@ -18,7 +18,7 @@
  * you should implement the methods tableView:titleForHeaderInSection, sectionIndexTitlesForTableView:
  * and tableView:sectionForSectionIndexTitle: either in your class or preferably here.
  */
-@interface BaseTableViewController : UITableViewController
+@interface BaseTableViewController : UITableViewController<NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, readwrite) AlertHelper *alertHelper;

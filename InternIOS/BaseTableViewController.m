@@ -25,12 +25,22 @@
 
 -(void) setFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController {
     _fetchedResultsController = fetchedResultsController;
+    fetchedResultsController.delegate = self;
     NSError *error = nil;
     [fetchedResultsController performFetch:&error];
     if ( error ) {
         NSLog(@"Could not fetch data from database");
         [self.alertHelper showAlertDialogWithMessage:NSLocalizedString(@"Could not fetch data from database", nil)]; 
     }
+}
+
+-(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    
+}
+
+-(void) dealloc {
+    self.fetchedResultsController.delegate = nil;
+    self.fetchedResultsController = nil;
 }
 
 @end

@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#ifndef INTERN_DOCUMENT_READY
 extern NSString * const DOCUMENT_READY;
+#define INTERN_DOCUMENT_READY
+#endif
 
 /**
  * Use this to manage the core data database for you. 
