@@ -15,4 +15,9 @@
 
 }
 
+-(void) typeText:(NSString *)text onTextView:(UITextView *)textView {
+    [textView performSelectorOnMainThread:@selector(setText:) withObject:text waitUntilDone:YES];
+}
+
+
 @end

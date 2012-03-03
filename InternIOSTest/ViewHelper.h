@@ -13,4 +13,6 @@
 
 -(void) typeText:(NSString *)text onTextField:(UITextField *)textField;
 
+-(void) typeText:(NSString *)text onTextView:(UITextView *)textView;
+
 @end

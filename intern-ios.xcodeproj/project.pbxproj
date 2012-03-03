@@ -66,6 +66,8 @@
 		53B1E27914FB0CD0001C6160 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537D1CA714E9CF5600FAB625 /* GHUnitIOS.framework */; };
 		53B1E27C14FB0D12001C6160 /* DataManagerBaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1E27B14FB0D12001C6160 /* DataManagerBaseTest.m */; };
 		53B1E27E14FB1172001C6160 /* DataManagerBaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B1E27B14FB0D12001C6160 /* DataManagerBaseTest.m */; };
+		53C29E9E1501BEB9007C9734 /* ViewHelperController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C29E9D1501BEB9007C9734 /* ViewHelperController.m */; };
+		53C29EA01501C0D9007C9734 /* SampleViews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53C29E9F1501C0D9007C9734 /* SampleViews.storyboard */; };
 		53EDA9E914F5395800C01AEE /* RandomIteratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EDA9E814F5395800C01AEE /* RandomIteratorTest.m */; };
 		53EDA9ED14F5B24500C01AEE /* CircularItemCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 53EDA9EB14F5B24500C01AEE /* CircularItemCursor.h */; };
 		53EDA9EE14F5B24500C01AEE /* CircularItemCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EDA9EC14F5B24500C01AEE /* CircularItemCursor.m */; };
@@ -131,6 +133,9 @@
 		53B1E27014FB0C98001C6160 /* InternIOSTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InternIOSTest-Prefix.pch"; sourceTree = "<group>"; };
 		53B1E27A14FB0D12001C6160 /* DataManagerBaseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManagerBaseTest.h; sourceTree = "<group>"; };
 		53B1E27B14FB0D12001C6160 /* DataManagerBaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManagerBaseTest.m; sourceTree = "<group>"; };
+		53C29E9C1501BEB9007C9734 /* ViewHelperController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHelperController.h; sourceTree = "<group>"; };
+		53C29E9D1501BEB9007C9734 /* ViewHelperController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHelperController.m; sourceTree = "<group>"; };
+		53C29E9F1501C0D9007C9734 /* SampleViews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SampleViews.storyboard; sourceTree = "<group>"; };
 		53EDA9E814F5395800C01AEE /* RandomIteratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomIteratorTest.m; sourceTree = "<group>"; };
 		53EDA9EB14F5B24500C01AEE /* CircularItemCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularItemCursor.h; sourceTree = "<group>"; };
 		53EDA9EC14F5B24500C01AEE /* CircularItemCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularItemCursor.m; sourceTree = "<group>"; };
@@ -420,6 +425,9 @@
 				53B1E26314FB092E001C6160 /* SampleTableViewController.m */,
 				53B1E26614FB0AB9001C6160 /* BaseTableViewControllerTest.m */,
 				531D6F9914FE516E007A3BB3 /* ViewHelperTest.m */,
+				53C29E9C1501BEB9007C9734 /* ViewHelperController.h */,
+				53C29E9D1501BEB9007C9734 /* ViewHelperController.m */,
+				53C29E9F1501C0D9007C9734 /* SampleViews.storyboard */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -617,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				537D1C9414E9CF1400FAB625 /* InfoPlist.strings in Resources */,
+				53C29EA01501C0D9007C9734 /* SampleViews.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +708,7 @@
 				531D6F9614FE50B6007A3BB3 /* ViewHelper.m in Sources */,
 				531D6F9A14FE516E007A3BB3 /* ViewHelperTest.m in Sources */,
 				53AE5095150049C2002748BF /* UIPlaceHolderTextView.m in Sources */,
+				53C29E9E1501BEB9007C9734 /* ViewHelperController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
