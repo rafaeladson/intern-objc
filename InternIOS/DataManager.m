@@ -73,7 +73,7 @@ NSString * const DOCUMENT_READY = @"DOCUMENT_READY";
 -(void) saveDocument {
     [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
         if(!success) {
-            [self.alertHelper showAlertDialogWithMessage:NSLocalizedString(@"Internal Error: Could not save document", nil)];
+            [self.alertHelper showAlertDialogWithMessage:NSLocalizedStringFromTable(@"Internal Error: Could not save document", @"Intern", nil)];
         }
     }];
 }
@@ -93,7 +93,7 @@ NSString * const DOCUMENT_READY = @"DOCUMENT_READY";
     if( [[NSFileManager defaultManager] fileExistsAtPath:[self.document.fileURL path]] ) {
         [[NSFileManager defaultManager] removeItemAtURL:self.document.fileURL error:&error];
         if ( error ) {
-            [self.alertHelper showAlertDialogWithMessage:NSLocalizedString(@"Internal error: failed to remove database", nil)];
+            [self.alertHelper showAlertDialogWithMessage:NSLocalizedStringFromTable(@"Internal error: failed to remove database", @"Intern", nil)];
         }
     }
 }
@@ -104,7 +104,7 @@ NSString * const DOCUMENT_READY = @"DOCUMENT_READY";
 }
 
 -(void) documentLoadFailed {
-    NSString *errorMessage = NSLocalizedString(@"Internal error: Could not open the database", nil);
+    NSString *errorMessage = NSLocalizedStringFromTable(@"Internal error: Could not open the database", @"Intern", nil);
     [self.alertHelper showAlertDialogWithMessage:errorMessage];
 }
 

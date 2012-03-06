@@ -13,7 +13,7 @@
 @implementation AlertHelper
 
 -(void) showAlertDialogWithMessage:(NSString *)message {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"alert", nil) message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"close", nil) otherButtonTitles:nil];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTable(@"Alert", @"Intern", nil) message:message delegate:nil cancelButtonTitle:NSLocalizedStringFromTable(@"Close", @"Intern", nil) otherButtonTitles:nil];
     [alertView show];
 }
 
