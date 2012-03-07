@@ -58,6 +58,10 @@
     
     [self.dataManager.managedObjectContext deleteObject:sample];
     
+    [controller performSelectorOnMainThread:@selector(controllerDidChangeContent:) withObject:nil waitUntilDone:YES];
+    int numberOfRowsInTable = [controller tableView:self.view numberOfRowsInSection:0];
+    GHAssertEquals(0, numberOfRowsInTable, nil);
+    
 }
 
 -(void) testForZeroEntities {

@@ -35,6 +35,7 @@
 }
 
 -(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView reloadData];
     
 }
 
