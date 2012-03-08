@@ -36,8 +36,8 @@
 
 -(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
-    
 }
+
 
 -(void) dealloc {
     self.fetchedResultsController.delegate = nil;

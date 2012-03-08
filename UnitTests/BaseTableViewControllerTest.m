@@ -15,17 +15,15 @@
 
 @interface BaseTableViewControllerTest : DataManagerBaseTest
 -(SampleTableViewController *)controllerForAllSamples;
-@property (strong, nonatomic) UITableView *view;
 
 @end
 
 @implementation BaseTableViewControllerTest
 
-@synthesize view = _view;
+
 
 -(void) setUpClass {
     [self startWithDatabaseName:@"base_table_view_controller_test"];
-    self.view = [[UITableView alloc] init];
     
 }
 
@@ -37,8 +35,9 @@
     sampleB.name = @"SampleB";
     
     SampleTableViewController *controller = [self controllerForAllSamples];
-    GHAssertTrue(2 == [controller tableView:self.view numberOfRowsInSection:0] , @"%d = 2", [controller tableView:self.view numberOfRowsInSection:0]);
-    UITableViewCell *firstCell = [controller tableView:self.view cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    int numberOfRowsInTable = [controller tableView:controller.tableView numberOfRowsInSection:0];
+    GHAssertEquals(2, numberOfRowsInTable, nil);
+    UITableViewCell *firstCell = [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     GHAssertEqualStrings(@"SampleA", firstCell.textLabel.text, nil);
 
     
@@ -52,22 +51,18 @@
     sample.name = @"Sample";
     
     SampleTableViewController *controller = [self controllerForAllSamples];
-    GHAssertTrue(1 == [controller tableView:self.view numberOfRowsInSection:0], @"%d = 1", [controller tableView:self.view numberOfRowsInSection:0]);
-    UITableViewCell *firstCell = [controller tableView:self.view cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    int numberOfRowsInTable =  [controller tableView:controller.tableView numberOfRowsInSection:0];
+    GHAssertEquals(1, numberOfRowsInTable, nil);
+    UITableViewCell *firstCell = [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     GHAssertEqualStrings(@"Sample", firstCell.textLabel.text, nil);
     
     [self.dataManager.managedObjectContext deleteObject:sample];
-    
-    [controller performSelectorOnMainThread:@selector(controllerDidChangeContent:) withObject:nil waitUntilDone:YES];
-    int numberOfRowsInTable = [controller tableView:self.view numberOfRowsInSection:0];
-    GHAssertEquals(0, numberOfRowsInTable, nil);
-    
 }
 
 -(void) testForZeroEntities {
     
     SampleTableViewController *controller = [self controllerForAllSamples];
-    GHAssertTrue(0 == [controller tableView:self.view numberOfRowsInSection:0], @"%d = 0", [controller tableView:self.view numberOfRowsInSection:0]);
+    GHAssertTrue(0 == [controller tableView:controller.tableView numberOfRowsInSection:0], @"%d = 0", [controller tableView:controller.tableView numberOfRowsInSection:0]);
     
 }
 
@@ -78,15 +73,14 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-                                                                                 managedObjectContext:self.dataManager.managedObjectContext 
+                                                                                managedObjectContext:self.dataManager.managedObjectContext 
                                                                                    sectionNameKeyPath:nil cacheName:nil];
     SampleTableViewController *controller = [[SampleTableViewController alloc] init];
-    [controller setView:self.view];
+    UITableView *tableView = [[UITableView alloc] init];
+    [controller setView:tableView];
     controller.fetchedResultsController = fetchedResultsController;
     return controller;
 }
-
-
 
 
 @end
