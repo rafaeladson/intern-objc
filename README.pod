@@ -70,11 +70,13 @@ If you want to contribute, you're welcome to do so. But I have a few requirement
 
 1. The code you do must have automatic tests wherever possible. 
 
-2.  If you do a make && make install, it should build the project successfully.
+2.  It should build successfully from the command line (see building).
 
 =back
 
 Failure to comply to this will result on me not accepting your code (I'll try to post a comment though whenever I don't). 
 If you don't want to do it, I won't be mad if you clone to your own repository and commit on it using your own rules.
+
+You can also contribute with suggestions, but I won't make any promises I'll implement them.
 
 =cut
