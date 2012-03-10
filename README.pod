@@ -18,13 +18,21 @@ Intern has the following targets:
 
 =over
 
-=item B<Intern:> It's the main framework. It should be usable in both Mac OS X and iOS applications, so this ideally target will never depend on any file that is platform dependent.
+=item B<Intern:> 
 
-=item B<InternIOS:> iOS platform dependent files. At this moment, including references to Core Data and UIKit.
+It's the main framework. It should be usable in both Mac OS X and iOS applications, so this ideally target will never depend on any file that is platform dependent.
 
-=item B<InternIOSTest:> GHUnit based files that should be used as a lib for testing iOS application. 
+=item B<InternIOS:> 
 
-=item B<UnitTests:> Intern GHUnit based unit tests.
+iOS platform dependent files. At this moment, including references to Core Data and UIKit.
+
+=item B<InternIOSTest:> 
+
+GHUnit based files that should be used as a lib for testing iOS application. 
+
+=item B<UnitTests:> 
+
+Intern GHUnit based unit tests.
 
 =back
 
@@ -32,7 +40,7 @@ Intern has the following targets:
 =head2 Building
 
 To build intern, just do:
-C<make && make clean && make install>
+C<make clean && make && make test>
 
 =head2 Using
 
@@ -40,11 +48,17 @@ Releases will be published on github as downloadable files. Each release will be
 
 =over
 
-=item B<InternIOS:> A folder containing both the header files and libraries built for both the simulator and phone version of intern.
+=item B<InternIOS:> 
 
-=item B<InternIOSTest:> A folder containing the headers and the library of InternIOSTest built for the simulator.
+A folder containing both the header files and libraries built for both the simulator and phone version of intern.
 
-=item B<*.lproj:> Intern localization files, this should be copied to your project localization bundles. All Intern localization are done in the table Intern.
+=item B<InternIOSTest:> 
+
+A folder containing the headers and the library of InternIOSTest built for the simulator.
+
+=item B<*.lproj:> 
+
+Intern localization files, this should be copied to your project localization bundles. All Intern localization are done in the table Intern.
 
 =back
 
@@ -54,9 +68,9 @@ If you want to contribute, you're welcome to do so. But I have a few requirement
 
 =over
 
-=item The code you do must have automatic tests wherever possible. 
+1. The code you do must have automatic tests wherever possible. 
 
-=item If you do a make && make install, it should build the project successfully.
+2.  If you do a make && make install, it should build the project successfully.
 
 =back
 
