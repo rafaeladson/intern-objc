@@ -74,7 +74,6 @@
 		53EDA9EF14F5B24500C01AEE /* CircularItemCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EDA9EC14F5B24500C01AEE /* CircularItemCursor.m */; };
 		53EDA9F214F5C14800C01AEE /* CircularItemCursorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EDA9F114F5C14800C01AEE /* CircularItemCursorTest.m */; };
 		53F1B091150C1F3D00124A5B /* DataManagerBaseTestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F1B090150C1F3D00124A5B /* DataManagerBaseTestTest.m */; };
-		53F1B092150C21FE00124A5B /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B0ED914F966B5004F98EF /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -723,7 +722,6 @@
 			files = (
 				53B1E27E14FB1172001C6160 /* DataManagerBaseTest.m in Sources */,
 				531D6F9714FE5138007A3BB3 /* ViewHelper.m in Sources */,
-				53F1B092150C21FE00124A5B /* DataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
