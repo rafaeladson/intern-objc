@@ -8,6 +8,7 @@
 
 #import "DataManagerBaseTest.h"
 #import "DataManager.h"
+#import <CoreData/CoreData.h>
 
 
 @interface DataManagerBaseTest() 
@@ -24,13 +25,29 @@
     [self prepare];
     self.dataManager = [[DataManager alloc] initWithDatabaseName:databaseName];
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(documentOpened:) name:DOCUMENT_READY object:self.dataManager];
+    [center addObserver:self selector:@selector(documentOpened:) name:self.dataManager.documentReadyNotificationName object:self.dataManager];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 
 }
 
 -(void) documentOpened:(NSNotification *)notification {
         [self notify:kGHUnitWaitStatusSuccess forSelector:nil];
+}
+
+-(NSArray *)getAllInstancesOfEntity:(NSString *)entityName {
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityName];
+    NSError *error = nil;
+    
+    NSArray *allInstances = [self.dataManager.managedObjectContext executeFetchRequest:request error:&error];
+    GHAssertNil(error, nil);
+    return allInstances;
+}
+
+-(void) deleteInstancesWithEntityName:(NSString *)entityName {
+    NSArray *allInstancesOnDatabase = [self getAllInstancesOfEntity:entityName];
+    for (int i = 0; i < [allInstancesOnDatabase count]; i++) {
+        [self.dataManager.managedObjectContext deleteObject:[allInstancesOnDatabase objectAtIndex:i]];
+    }
 }
 
 -(void) tearDownClass {

@@ -9,10 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-#ifndef INTERN_DOCUMENT_READY
-extern NSString * const DOCUMENT_READY;
-#define INTERN_DOCUMENT_READY
-#endif
 
 /**
  * Use this to manage the core data database for you. 
@@ -26,7 +22,8 @@ extern NSString * const DOCUMENT_READY;
  * databaseName is the desired name for the database. For example, if you define databaseName
  * to be "kotoba", a file named "kotoba.db" will be created on the user's document directory.
  * Be sure to not use your database after only defining this method. You should listen
- * for the DOCUMENT_READY notification on notificationCenter before doing anything with this document.
+ * for a notification with the name returned by documentReadyNotificationName on notificationCenter 
+ * before doing anything with this document.
  * If in doubt, go see hte DataMaangerTest class.
  */
 -(DataManager *) initWithDatabaseName:(NSString *)databaseName;
@@ -50,6 +47,13 @@ extern NSString * const DOCUMENT_READY;
  */
 -(void) closeDocument;
 
+/**
+ * Use this value when you want to listen to the notification that the data file finished loading.
+ * You will normally want to do this, since when you call initWithDatabaseName, it will dispatch a
+ * async action to load the document, and will dispatch a NSNotification with documentReadyNotificationName
+ * when done.
+ */
+@property (strong, nonatomic, readonly) NSString *documentReadyNotificationName;
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
 

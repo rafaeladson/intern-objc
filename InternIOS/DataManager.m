@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 
 
-NSString * const DOCUMENT_READY = @"DOCUMENT_READY";
+
 
 @interface DataManager() 
 
@@ -99,8 +99,12 @@ NSString * const DOCUMENT_READY = @"DOCUMENT_READY";
 }
                 
 -(void) notifyDocumentReady {
-    [[NSNotificationCenter defaultCenter] postNotificationName:DOCUMENT_READY object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:self.documentReadyNotificationName object:self];
                     
+}
+
+-(NSString *)documentReadyNotificationName {
+    return @"DOCUMENT_READY";
 }
 
 -(void) documentLoadFailed {

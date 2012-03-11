@@ -26,6 +26,20 @@
  */
 -(void) startWithDatabaseName:(NSString *)databaseName;
 
+
+-(NSArray *)getAllInstancesOfEntity:(NSString *)entityName;
+
+/**
+ * This should ideally be called on the teardown method to delete all entities for a given entity name.
+ * You don't need to do it if you have only one method in your test, or if the fact that there are entities
+ * on the database won't affect your tests.
+ * This was created because my normal approach to this problem was to delete manually in the end of every test.
+ * However, if the test failed, the entities in the database wouldn't be deleted, creating a problem
+ * for other tests.
+ * Note: this will not handle primary key violations, nor it will cascade.
+ */
+-(void) deleteInstancesWithEntityName:(NSString *)entityName;
+
 @property (strong, nonatomic, readonly) DataManager *dataManager;
 
 @end

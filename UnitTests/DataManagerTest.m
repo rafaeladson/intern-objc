@@ -25,7 +25,7 @@
     [self prepare];
     self.dataManager = [[DataManager alloc] initWithDatabaseName:@"test_datamanger"];
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(documentOpened:) name:DOCUMENT_READY object:self.dataManager];
+    [center addObserver:self selector:@selector(documentOpened:) name:self.dataManager.documentReadyNotificationName object:self.dataManager];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 
 }
@@ -48,7 +48,6 @@
     [self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testOpenDocumentAndSaveEntity)];
     
 }
-
 
 
 -(void) tearDownClass {
