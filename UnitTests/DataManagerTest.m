@@ -10,8 +10,9 @@
 #import <GHUnitIOS/GHUnit.h>
 #import "DataManager.h"
 #import "Sample.h"
+#import "DataManagerDelegate.h"
 
-@interface DataManagerTest : GHAsyncTestCase
+@interface DataManagerTest : GHAsyncTestCase <DataManagerDelegate>
 
 @property(strong, nonatomic) DataManager *dataManager;
 
@@ -23,14 +24,12 @@
 
 -(void) testOpenDocumentAndSaveEntity {
     [self prepare];
-    self.dataManager = [[DataManager alloc] initWithDatabaseName:@"test_datamanger"];
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(documentOpened:) name:self.dataManager.documentReadyNotificationName object:self.dataManager];
+    self.dataManager = [[DataManager alloc] initWithDatabaseName:@"test_datamanger" andDelegate:self];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 
 }
 
--(void) documentOpened:(NSNotification *)notification {
+-(void) documentDidLoad {
     Sample *sample = [NSEntityDescription insertNewObjectForEntityForName:@"Sample" inManagedObjectContext:self.dataManager.managedObjectContext];
     sample.name = @"Hello";
     

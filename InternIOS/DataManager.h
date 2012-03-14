@@ -26,7 +26,7 @@
  * before doing anything with this document.
  * If in doubt, go see hte DataMaangerTest class.
  */
--(DataManager *) initWithDatabaseName:(NSString *)databaseName;
+-(DataManager *) initWithDatabaseName:(NSString *)databaseName andDelegate:(id)delegate;
 /**
  * Saves the document. 
  * Iphone normally saves the document when you close the application, so it's not entirely required,
@@ -47,13 +47,7 @@
  */
 -(void) closeDocument;
 
-/**
- * Use this value when you want to listen to the notification that the data file finished loading.
- * You will normally want to do this, since when you call initWithDatabaseName, it will dispatch a
- * async action to load the document, and will dispatch a NSNotification with documentReadyNotificationName
- * when done.
- */
-@property (strong, nonatomic, readonly) NSString *documentReadyNotificationName;
+
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
 

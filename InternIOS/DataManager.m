@@ -9,7 +9,7 @@
 #import "DataManager.h"
 #import "AlertHelper.h"
 #import <UIKit/UIKit.h>
-
+#import "DataManagerDelegate.h"
 
 
 
@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic, readwrite) UIManagedDocument *document;
 @property (strong, nonatomic) AlertHelper *alertHelper;
+@property (strong, nonatomic) id delegate;
+
 -(void) openDocument;
 -(void) notifyDocumentReady;
 -(void) documentLoadFailed;
@@ -25,12 +27,13 @@
 
 @implementation DataManager
 
-@synthesize document = _document, alertHelper = _alertHelper;
+@synthesize document = _document, alertHelper = _alertHelper, delegate = _delegate;
 
 
--(DataManager *) initWithDatabaseName:(NSString *)databaseName {
+-(DataManager *) initWithDatabaseName:(NSString *)databaseName andDelegate:(id)delegate {
     self = [super init];
     if ( self ) {
+        self.delegate = delegate;
         _alertHelper = [[AlertHelper alloc] init];
         NSString *dbPath = [databaseName stringByAppendingString:@".db"];
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -99,13 +102,12 @@
 }
                 
 -(void) notifyDocumentReady {
-    [[NSNotificationCenter defaultCenter] postNotificationName:self.documentReadyNotificationName object:self];
+    if ( [self.delegate respondsToSelector:@selector(documentDidLoad)] ) {
+        [self.delegate documentDidLoad];
+    }
                     
 }
 
--(NSString *)documentReadyNotificationName {
-    return @"DOCUMENT_READY";
-}
 
 -(void) documentLoadFailed {
     NSString *errorMessage = NSLocalizedStringFromTable(@"Internal error: Could not open the database", @"Intern", nil);

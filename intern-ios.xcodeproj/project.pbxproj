@@ -18,6 +18,7 @@
 		53543B9914F71F6E00326078 /* RandomIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5328121214F5213100E6BB8A /* RandomIterator.m */; };
 		53543B9A14F71F7200326078 /* CircularItemCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EDA9EC14F5B24500C01AEE /* CircularItemCursor.m */; };
 		53543B9B14F71F7600326078 /* PreConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 537D1CAD14E9D04A00FAB625 /* PreConditions.m */; };
+		535FEEE61510563E00FBBEC6 /* DataManagerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 535FEEE51510563E00FBBEC6 /* DataManagerDelegate.h */; };
 		536B0EDA14F966B5004F98EF /* DataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 536B0ED814F966B5004F98EF /* DataManager.h */; };
 		536B0EDB14F966B5004F98EF /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 536B0ED914F966B5004F98EF /* DataManager.m */; };
 		536B0EDD14F96784004F98EF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536B0EDC14F96784004F98EF /* CoreData.framework */; };
@@ -84,6 +85,7 @@
 		5328121214F5213100E6BB8A /* RandomIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomIterator.m; sourceTree = "<group>"; };
 		53543B8C14F71F5800326078 /* libInternIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libInternIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		53543B9014F71F5800326078 /* InternIOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InternIOS-Prefix.pch"; sourceTree = "<group>"; };
+		535FEEE51510563E00FBBEC6 /* DataManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManagerDelegate.h; sourceTree = "<group>"; };
 		536B0ED814F966B5004F98EF /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		536B0ED914F966B5004F98EF /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		536B0EDC14F96784004F98EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -222,6 +224,7 @@
 			children = (
 				536B0ED814F966B5004F98EF /* DataManager.h */,
 				536B0ED914F966B5004F98EF /* DataManager.m */,
+				535FEEE51510563E00FBBEC6 /* DataManagerDelegate.h */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				536B0EE814F9B879004F98EF /* AlertHelper.h in Headers */,
 				53B1E25D14FB0625001C6160 /* BaseTableViewController.h in Headers */,
 				53AE5094150049C2002748BF /* UIPlaceHolderTextView.h in Headers */,
+				535FEEE61510563E00FBBEC6 /* DataManagerDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

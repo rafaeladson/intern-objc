@@ -13,7 +13,6 @@
 
 @interface DataManagerBaseTest() 
 @property (strong, nonatomic, readwrite) DataManager *dataManager;
--(void) documentOpened:(NSNotification *)notification;
 @end
 
 
@@ -23,14 +22,12 @@
 
 -(void) startWithDatabaseName:(NSString *)databaseName {
     [self prepare];
-    self.dataManager = [[DataManager alloc] initWithDatabaseName:databaseName];
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(documentOpened:) name:self.dataManager.documentReadyNotificationName object:self.dataManager];
+    self.dataManager = [[DataManager alloc] initWithDatabaseName:databaseName andDelegate:self];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 
 }
 
--(void) documentOpened:(NSNotification *)notification {
+-(void) documentDidLoad {
         [self notify:kGHUnitWaitStatusSuccess forSelector:nil];
 }
 

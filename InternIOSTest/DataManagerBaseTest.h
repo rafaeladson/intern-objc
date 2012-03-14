@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <GHUnitIOS/GHUnit.h>
+#import "DataManager.h"
+#import "DataManagerDelegate.h"
 
-@class DataManager;
+
 
 
 /**
@@ -19,7 +21,7 @@
  * On the tearDownClass method, the database will be removed.
  * If you override tearDownClass method, don't forget to call super.
  */
-@interface DataManagerBaseTest : GHAsyncTestCase 
+@interface DataManagerBaseTest : GHAsyncTestCase <DataManagerDelegate>
 
 /**
  * Please call this on your setUpClass method.
