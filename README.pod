@@ -42,6 +42,8 @@ Intern GHUnit based unit tests.
 To build intern, just do:
 C<make clean && make && make test>
 
+If you want to build the zip package, run the script package.sh instead.
+
 =head2 Using
 
 Releases will be published on github as downloadable files. Each release will be published as a zip file with the following contents:
@@ -61,6 +63,10 @@ A folder containing the headers and the library of InternIOSTest built for the s
 Intern localization files, this should be copied to your project localization bundles. All Intern localization are done in the table Intern.
 
 =back
+
+The easiest way to use intern is to execute prepare_for_intern.sh in the root of your project, passing a URL for the zip file as a parameter. Please refer to the file
+to learn how it works.
+
 
 =head2 Contributing
 
