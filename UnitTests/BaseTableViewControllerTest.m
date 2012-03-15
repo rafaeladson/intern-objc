@@ -39,11 +39,6 @@
     GHAssertEquals(2, numberOfRowsInTable, nil);
     UITableViewCell *firstCell = [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     GHAssertEqualStrings(@"SampleA", firstCell.textLabel.text, nil);
-
-    
-    [self.dataManager.managedObjectContext deleteObject:sampleA];
-    [self.dataManager.managedObjectContext deleteObject:sampleB];
-
 }
 
 -(void) testForOneEntity {
@@ -55,8 +50,6 @@
     GHAssertEquals(1, numberOfRowsInTable, nil);
     UITableViewCell *firstCell = [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     GHAssertEqualStrings(@"Sample", firstCell.textLabel.text, nil);
-    
-    [self.dataManager.managedObjectContext deleteObject:sample];
 }
 
 -(void) testForZeroEntities {
@@ -64,6 +57,19 @@
     SampleTableViewController *controller = [self controllerForAllSamples];
     GHAssertTrue(0 == [controller tableView:controller.tableView numberOfRowsInSection:0], @"%d = 0", [controller tableView:controller.tableView numberOfRowsInSection:0]);
     
+}
+
+-(void) testDeleteEntity {
+    Sample *sample = [NSEntityDescription insertNewObjectForEntityForName:@"Sample" inManagedObjectContext:self.dataManager.managedObjectContext];
+    sample.name = @"foo";
+    
+    SampleTableViewController *controller = [self controllerForAllSamples];
+    [controller setEditing:YES animated:NO];
+    [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    int numberOfSamples = [[self getAllInstancesOfEntity:@"Sample"] count];
+    GHAssertEquals(0, numberOfSamples, nil);
+
 }
 
 -(SampleTableViewController *)controllerForAllSamples {
@@ -78,8 +84,13 @@
     SampleTableViewController *controller = [[SampleTableViewController alloc] init];
     UITableView *tableView = [[UITableView alloc] init];
     [controller setView:tableView];
+    controller.dataManager = self.dataManager;
     controller.fetchedResultsController = fetchedResultsController;
     return controller;
+}
+
+-(void) tearDown {
+    [self deleteInstancesWithEntityName:@"Sample"];
 }
 
 

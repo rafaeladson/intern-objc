@@ -20,6 +20,7 @@
  */
 @interface BaseTableViewController : UITableViewController<NSFetchedResultsControllerDelegate>
 
+@property (strong, nonatomic) DataManager *dataManager;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, readwrite) AlertHelper *alertHelper;
 

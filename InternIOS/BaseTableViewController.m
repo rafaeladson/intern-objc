@@ -12,7 +12,7 @@
 
 @implementation BaseTableViewController
 
-@synthesize fetchedResultsController = _fetchedResultsController, alertHelper = _alertHelper;
+@synthesize fetchedResultsController = _fetchedResultsController, alertHelper = _alertHelper, dataManager = _dataManager;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[self.fetchedResultsController sections] count];
@@ -37,6 +37,19 @@
 -(void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView reloadData];
 }
+
+-(void) setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:YES];
+}
+
+-(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ( editingStyle == UITableViewCellEditingStyleDelete ) {
+        NSManagedObject *deletedItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [self.dataManager.managedObjectContext deleteObject:deletedItem];
+    }
+}
+
 
 
 -(void) dealloc {
