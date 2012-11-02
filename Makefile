@@ -5,10 +5,10 @@ maclib:
 clean:
 	rm -rf build
 test:
-	GHUNIT_CLI=1 xcodebuild -target UnitTests -configuration Debug -sdk iphonesimulator5.1 build
+	GHUNIT_CLI=1 xcodebuild -target UnitTests -configuration Debug -sdk iphonesimulator6.0 build
 ioslib: 
-	xcodebuild -target InternIOS -sdk iphoneos5.1 build
+	xcodebuild -target InternIOS -sdk iphoneos6.0 build
 iossimlib:
-	xcodebuild -target InternIOS -sdk iphonesimulator5.1 build
+	xcodebuild -target InternIOS -sdk iphonesimulator6.0 build
 iostestlib:
-	xcodebuild -target InternIOSTest -sdk iphonesimulator5.1 build 
+	xcodebuild -target InternIOSTest -sdk iphonesimulator6.0 build 
